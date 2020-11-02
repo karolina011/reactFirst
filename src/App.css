@@ -10,12 +10,33 @@ h1 {
   color: #61dafb;
   transition: transform .4s;
   padding-top: 30px !important;
+  padding-bottom: 30px !important;
   margin-block-start: 0px;
 }
 
+.headline {
+  text-shadow: 3px 3px 5px black;
+  color: #fff;
+  transition: transform .4s;
+}
+
+.headline:hover {
+  cursor: default;
+  color: #d9ffff;
+  transform: scale(0.98);
+}
+
 h1:hover {
+  cursor: default;
   color: #44b5d4;
   transform: scale(0.98);
+}
+
+.appBtn {
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #61dafb;
+  color: #282c31;
 }
 
 .App-logo {
