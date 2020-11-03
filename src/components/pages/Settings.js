@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import BasePlayerController from "./BasePlayerController";
 import PlayersTable from "./players/playersTable";
+import CreatingPlayerBox from "./players/CreatingPlayerBox";
+import {Link} from "react-router-dom";
 
 export class Settings extends BasePlayerController {
 
@@ -12,21 +14,15 @@ export class Settings extends BasePlayerController {
                 <div className="row m-md-5">
                     <div id="addPlayerContainer" className="col-md-5 offset-md-1">
                         <h2 className="headline">New Player</h2>
-                        <div id="addPlayerBox" className="bg-light text-dark p-md-4 mt-md-4 rounded ">
-                            <form>
-                                <div className="form-group text-left">
-                                    <label  htmlFor="playerName">Name</label>
-                                    <input type="text" className="form-control" id="playerName"
-                                           placeholder="Palyer Name"/>
-                                </div>
-                                <button type="submit" className="btn appBtn">Submit</button>
-                            </form>
-                        </div>
+                        <CreatingPlayerBox addPlayer={this.addPlayer}/>
+                        <Link to='/dashboard'>
+                            <button className="btn appBtn py-md-3 px-md-4 my-md-5">Start Game</button>
+                        </Link>
                     </div>
 
                     <div id="currentPlayers" className="col-md-5 offset-md-1">
                         <h2 className="headline">Current Players</h2>
-                        <PlayersTable players={this.state.players}/>
+                        <PlayersTable players={this.state.players} removePlayer={this.removePlayer}/>
                     </div>
                 </div>
             </div>

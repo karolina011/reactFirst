@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CreatingPlayerRow from "./CreatingPlayerRow";
+import CreatingPlayerBox from "./CreatingPlayerBox";
 import PlayerRow from "./PlayerRow";
 import PropTypes from 'prop-types';
 
@@ -8,12 +8,10 @@ export class PlayersTable extends Component {
 
 
     render() {
-        console.log(this.props.players);
-        console.log('asdasd');
         return (
-            <table className="table table-striped bg-light mt-md-4">
+            <table className="table table-striped bg-light p-md-4 mt-md-4 rounded ">
                 {this.props.players.map((player) => (
-                <CreatingPlayerRow key={player.id} player={player} />
+                <PlayerRow key={player.id} player={player} removePlayer={this.props.removePlayer}/>
                 ))}
             </table>
         );
